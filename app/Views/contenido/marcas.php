@@ -1,7 +1,7 @@
 <?= $this->extend('plantilla/layout') ?>
 
 <?= $this->section('titulo') ?>
-<title>Categorias</title>
+<title>Marcas</title>
 <?= $this->endSection() ?>
 
 
@@ -60,55 +60,7 @@
                 </div>
             </nav> 
             <!-- ! Main -->
-            <main class="main users chart-page" id="skip-target">
-                <div class="container">
-                    <h2 class="main-title titulo">Perfiles</h2>
 
-                    <div class="row">
-                        <div class="col-lg-9 tabla-perfiles">
-                            <div class="users-table table-wrapper">
-                                <table class="posts-table">
-                                    <thead>
-                                        <tr class="users-table-info">
-                                            <th>Id</th>
-                                            <th>Perfil</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        foreach ($categorias as $categoria) {
-                                        ?>
-                                            <tr>
-                                                <td>
-                                                    <?=
-                                                    $categoria->idCategoria
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <?=
-                                                    $categoria->NombreCa
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <a href="<?= base_url() ?>/perfiles/editar/<?= $categoria->idCategoria ?>">
-                                                        <img src="<?= base_url() ?>/public/svg/editar.png" alt="Editar">
-                                                    </a>
-                                                    <a href="<?= base_url() ?>/perfiles/<?= $categoria->idCategoria  ?>">
-                                                        <img src="<?= base_url() ?>/public/svg/borrar.png" alt="Eliminar">
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
             <!-- ! Footer -->
         </div>
     </div>

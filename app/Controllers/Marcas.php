@@ -3,8 +3,8 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\CategoriasModel;
-class Categorias extends ResourceController
+
+class Marcas extends ResourceController
 {
     /**
      * Return an array of resource objects, themselves in array format
@@ -13,12 +13,9 @@ class Categorias extends ResourceController
      */
     public function index()
     {
-        $model = new CategoriasModel(); 
-
-        $categorias['categorias'] = $model->asObject()->findAll();
         $session = session();
         $session->get();
-        return view('contenido/categorias', $categorias); 
+        return view('contenido/marcas'); 
     }
 
     /**

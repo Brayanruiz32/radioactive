@@ -40,6 +40,9 @@
                                 <li>
                                     <a href="<?= base_url() ?>/productos">Productos</a>
                                 </li>
+                                <li>
+                                    <a href="<?= base_url() ?>/marcas">Marcas</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
