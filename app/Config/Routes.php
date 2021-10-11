@@ -31,15 +31,27 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+//rutas de la pagina
 $routes->get('/', 'Home::iniciar');
-$routes->post('/validar', 'Usuarios::validar'); 
 $routes->get('/inicio', 'Home::inicio');
+$routes->get('/salir', 'Home::salir');
+
+//Rutas personalizadas para el usuario
 $routes->post('/registro', 'Usuarios::registro'); 
 $routes->get('/registrarse', 'Usuarios::registrarse');
 $routes->get('/usuarios', 'Usuarios::index');
-$routes->get('/perfiles', 'Perfiles::index');
-$routes->get('/configuracion', 'Configuracion::index');
-$routes->get('/salir', 'Home::salir');
+$routes->post('/validar', 'Usuarios::validar'); 
+
+//rutas restful
+$routes->resource('perfiles'); 
+$routes->resource('configuracion'); 
+$routes->resource('clientes'); 
+$routes->resource('productos'); 
+$routes->resource('reportes'); 
+$routes->resource('ventas'); 
+$routes->resource('categorias'); 
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

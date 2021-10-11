@@ -1,7 +1,7 @@
 <?= $this->extend('plantilla/layout') ?>
 
 <?= $this->section('titulo') ?>
-<title>Perfiles</title>
+<title>Usuarios</title>
 <?= $this->endSection() ?>
 
 

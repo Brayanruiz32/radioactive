@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 
-class Configuracion extends ResourceController
+class Ventas extends ResourceController
 {
     /**
      * Return an array of resource objects, themselves in array format
@@ -15,7 +15,7 @@ class Configuracion extends ResourceController
     {
         $session = session();
         $session->get();
-        return view('contenido/configuracion'); 
+        return view('contenido/ventas'); 
     }
 
     /**

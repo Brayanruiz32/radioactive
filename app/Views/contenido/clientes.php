@@ -1,7 +1,7 @@
 <?= $this->extend('plantilla/layout') ?>
 
 <?= $this->section('titulo') ?>
-<title>Configuración</title>
+<title>Clientes</title>
 <?= $this->endSection() ?>
 
 
