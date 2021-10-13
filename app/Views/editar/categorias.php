@@ -62,54 +62,13 @@
             <!-- ! Main -->
             <main class="main users chart-page" id="skip-target">
                 <div class="container">
-                    <h2 class="main-title titulo">Categorias</h2>
-                    <div>
-                        <a href="<?= base_url() ?>/categorias/new">Nuevo</a>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-9 tabla-perfiles">
-                            <div class="users-table table-wrapper">
-                                <table class="posts-table">
-                                    <thead>
-                                        <tr class="users-table-info">
-                                            <th>Id</th>
-                                            <th>Categoria</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        foreach ($categorias as $categoria) {
-                                        ?>
-                                            <tr>
-                                                <td>
-                                                    <?=
-                                                    $categoria->idCategoria
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <?=
-                                                    $categoria->NombreCa
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <a href="<?= base_url() ?>/categorias/<?= $categoria->idCategoria ?>/edit">
-                                                        <img src="<?= base_url() ?>/public/svg/editar.png" alt="Editar">
-                                                    </a>
-                                                    <form action="<?= base_url() ?>/categorias/<?= $categoria->idCategoria?>" method="post">
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <button type="submit"><img src="<?= base_url() ?>/public/svg/borrar.png" alt="Eliminar"></button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <h2 class="main-title titulo">Nuevo</h2>
+
+                    <form action="<?= base_url() ?>/categorias/<?= $categoria['idCategoria'] ?>" method="post">
+                        <input type="hidden" value="PUT" name="_method">
+                        Nombre de la categoria<input type="text" value="<?= $categoria['NombreCa'] ?>" name="nombre" id="">
+                        <button type="submit">Actualizar</button>
+                    </form>
                 </div>
             </main>
             <!-- ! Footer -->

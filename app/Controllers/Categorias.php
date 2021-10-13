@@ -40,7 +40,7 @@ class Categorias extends ResourceController
     {
         $session = session();
         $session->get();
-        return view('formulario/categorias'); 
+        return view('nuevo/categorias'); 
     }
 
     /**
@@ -67,7 +67,11 @@ class Categorias extends ResourceController
      */
     public function edit($id = null)
     {
-        return "Aqui se editara"; 
+        $model = new CategoriasModel(); 
+        $categoria['categoria'] = $model->find($id);
+        $session = session();
+        $session->get();
+        return view('editar/categorias',$categoria);  
     }
 
     /**
@@ -77,7 +81,14 @@ class Categorias extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $model = new CategoriasModel(); 
+        $request = \Config\Services::request(); 
+        $nombre = $request->getPostGet('nombre'); 
+        $datos = array(
+            'NombreCa' => $nombre
+        ); 
+        $model->update($id, $datos);
+        return redirect()->to(base_url('/categorias')) ;
     }
 
     /**
