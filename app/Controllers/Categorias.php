@@ -15,7 +15,7 @@ class Categorias extends ResourceController
     {
         $model = new CategoriasModel(); 
 
-        $categorias['categorias'] = $model->asObject()->findAll();
+        $categorias['categorias'] = $model->asObject()->where('Estado', 1)->findAll();
         $session = session();
         $session->get();
         return view('contenido/categorias', $categorias); 
@@ -38,7 +38,9 @@ class Categorias extends ResourceController
      */
     public function new()
     {
-        //
+        $session = session();
+        $session->get();
+        return view('formulario/categorias'); 
     }
 
     /**
@@ -48,7 +50,14 @@ class Categorias extends ResourceController
      */
     public function create()
     {
-        //
+        $request = \Config\Services::request(); 
+        $nombre = $request->getPostGet('nombre'); 
+        $datos = array(
+            'NombreCa' => $nombre
+        ); 
+        $model = new CategoriasModel();
+        $model->insert($datos);  
+        return redirect()->to(base_url('/categorias'));//Se vuelve a cargar el controlador
     }
 
     /**
@@ -58,7 +67,7 @@ class Categorias extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+        return "Aqui se editara"; 
     }
 
     /**
@@ -78,6 +87,11 @@ class Categorias extends ResourceController
      */
     public function delete($id = null)
     {
-        //
+        $model = new CategoriasModel();
+        $datos = array(
+            'Estado' => 0
+        );
+        $curso = $model->update($id, $datos);
+        return redirect()->to(base_url('/categorias'));
     }
 }

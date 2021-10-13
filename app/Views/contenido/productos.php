@@ -65,8 +65,55 @@
                     <h2 class="main-title titulo">Productos</h2>
 
                     <div class="row">
-                        <div class="col-lg-9 tabla-perfiles" >
-                            
+                        <div class="col-lg-9 tabla-perfiles">
+                            <div class="users-table table-wrapper">
+                                <table class="posts-table">
+                                    <thead>
+                                        <tr class="users-table-info">
+                                            <th>Id</th>
+                                            <th>Producto</th>
+                                            <th>Precio</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        foreach ($productos as $producto) {
+
+
+                                        ?>
+                                            <tr>
+                                                <td>
+                                                    <?=
+                                                    $producto->idProducto
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <?=
+                                                    $producto->NombrePro
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <?=
+                                                    $producto->Precio
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <a href="<?= base_url() ?>/perfiles/editar/<?= $producto->idProducto ?>">
+                                                        <img src="<?= base_url() ?>/public/svg/editar.png" alt="Editar">
+                                                    </a>
+                                                    <a href="<?= base_url() ?>/perfiles/<?= $producto->idProducto  ?>">
+                                                        <img src="<?= base_url() ?>/public/svg/borrar.png" alt="Eliminar">
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

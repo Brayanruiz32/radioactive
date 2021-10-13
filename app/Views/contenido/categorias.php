@@ -62,8 +62,10 @@
             <!-- ! Main -->
             <main class="main users chart-page" id="skip-target">
                 <div class="container">
-                    <h2 class="main-title titulo">Perfiles</h2>
-
+                    <h2 class="main-title titulo">Categorias</h2>
+                    <div>
+                        <a href="<?= base_url() ?>/categorias/new">Nuevo</a>
+                    </div>
                     <div class="row">
                         <div class="col-lg-9 tabla-perfiles">
                             <div class="users-table table-wrapper">
@@ -71,7 +73,7 @@
                                     <thead>
                                         <tr class="users-table-info">
                                             <th>Id</th>
-                                            <th>Perfil</th>
+                                            <th>Categoria</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -91,12 +93,13 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <a href="<?= base_url() ?>/perfiles/editar/<?= $categoria->idCategoria ?>">
+                                                    <a href="<?= base_url() ?>/categorias/edit/<?= $categoria->idCategoria ?>">
                                                         <img src="<?= base_url() ?>/public/svg/editar.png" alt="Editar">
                                                     </a>
-                                                    <a href="<?= base_url() ?>/perfiles/<?= $categoria->idCategoria  ?>">
-                                                        <img src="<?= base_url() ?>/public/svg/borrar.png" alt="Eliminar">
-                                                    </a>
+                                                    <form action="<?= base_url() ?>/categorias/<?= $categoria->idCategoria?>" method="post">
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit"><img src="<?= base_url() ?>/public/svg/borrar.png" alt="Eliminar"></button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         <?php

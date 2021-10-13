@@ -72,7 +72,7 @@
                                 <table class="posts-table">
                                     <thead>
                                         <tr class="users-table-info">
-                                            <th>Id</th>
+                                            <th>Perfil</th>
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                             <th>Correo</th>
@@ -86,7 +86,7 @@
                                             <tr>
                                                 <td>
                                                     <?=
-                                                    $usuario->idUsuario
+                                                    $usuario->Perfiles
                                                     ?>
                                                 </td>
                                                 <td>
@@ -108,7 +108,7 @@
                                                     <a href="<?= base_url() ?>/usuarios/editar/<?= $usuario->idUsuario ?>">
                                                         <img src="<?= base_url() ?>/public/svg/editar.png" alt="Editar">
                                                     </a>
-                                                    <a href="<?= base_url() ?>/usuarios/<?= $usuario->idUsuario  ?>">
+                                                    <a href="<?= base_url() ?>/usuarios/eliminar/<?= $usuario->idUsuario  ?>">
                                                         <img src="<?= base_url() ?>/public/svg/borrar.png" alt="Eliminar">
                                                     </a>
                                                 </td>
@@ -119,7 +119,7 @@
                                     </tbody>
                                 </table>
 
-                                <?= $paginador->links(); ?>
+                               
                             </div>
                         </div>
                     </div>

@@ -1946,6 +1946,7 @@ label {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
+    text-align: center;
 }
 
 .users-table-info {

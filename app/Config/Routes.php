@@ -41,7 +41,7 @@ $routes->post('/registro', 'Usuarios::registro');
 $routes->get('/registrarse', 'Usuarios::registrarse');
 $routes->get('/usuarios', 'Usuarios::index');
 $routes->post('/validar', 'Usuarios::validar'); 
-
+//$routes->put('', 'Usuarios::eliminar');  
 //rutas restful
 $routes->resource('perfiles'); 
 $routes->resource('configuracion'); 
@@ -50,8 +50,8 @@ $routes->resource('productos');
 $routes->resource('reportes'); 
 $routes->resource('ventas'); 
 $routes->resource('categorias'); 
-
-
+$routes->resource('marcas'); 
+$routes->resource('reportes'); 
 /*
  * --------------------------------------------------------------------
  * Additional Routing

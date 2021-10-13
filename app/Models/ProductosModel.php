@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CategoriasModel extends Model
+class ProductosModel extends Model
 {
     protected $DBGroup              = 'default';
-    protected $table                = 'categoria';
-    protected $primaryKey           = 'idCategoria';
+    protected $table                = 'productos';
+    protected $primaryKey           = 'idProducto';
     protected $useAutoIncrement     = true;
     protected $insertID             = 0;
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = ['NombreCa', 'Estado'];
+    protected $allowedFields        = ['NombrePro', 'Precio', 'Stock'];
 
     // Dates
     protected $useTimestamps        = false;

@@ -1,7 +1,7 @@
 <?= $this->extend('plantilla/layout') ?>
 
 <?= $this->section('titulo') ?>
-<title>Marcas</title>
+<title>Categorias</title>
 <?= $this->endSection() ?>
 
 
@@ -62,57 +62,12 @@
             <!-- ! Main -->
             <main class="main users chart-page" id="skip-target">
                 <div class="container">
-                    <h2 class="main-title titulo">Marcas</h2>
+                    <h2 class="main-title titulo">Nuevo</h2>
 
-                    <div class="row">
-                        <div class="col-lg-9 tabla-perfiles">
-                            <div class="users-table table-wrapper">
-                                <table class="posts-table">
-                                    <thead>
-                                        <tr class="users-table-info">
-                                            <th>Id</th>
-                                            <th>Nombre</th>
-                                            <th>Descripcion</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        foreach ($marcas as $marca) {
-                                        ?>
-                                            <tr>
-                                                <td>
-                                                    <?=
-                                                    $marca->idMarca
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <?=
-                                                    $marca->Nombre
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <?=
-                                                    $marca->Descripcion
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <a href="<?= base_url() ?>/perfiles/editar/<?=   $marca->idMarca ?>">
-                                                        <img src="<?= base_url() ?>/public/svg/editar.png" alt="Editar">
-                                                    </a>
-                                                    <a href="<?= base_url() ?>/perfiles/<?=   $marca->idMarca  ?>">
-                                                        <img src="<?= base_url() ?>/public/svg/borrar.png" alt="Eliminar">
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <form action="<?= base_url() ?>/categorias" method="post">
+                        Nombre de la categoria<input type="text" name="nombre" id="">
+                        <button type="submit">Crear</button>
+                    </form>
                 </div>
             </main>
             <!-- ! Footer -->

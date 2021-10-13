@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-
+use App\Models\MarcasModel; 
 class Marcas extends ResourceController
 {
     /**
@@ -13,9 +13,11 @@ class Marcas extends ResourceController
      */
     public function index()
     {
+        $model = new MarcasModel(); 
+        $marcas['marcas'] = $model->asObject()->findAll();
         $session = session();
         $session->get();
-        return view('contenido/marcas'); 
+        return view('contenido/marcas', $marcas); 
     }
 
     /**

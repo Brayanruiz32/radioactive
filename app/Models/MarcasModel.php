@@ -8,13 +8,13 @@ class MarcasModel extends Model
 {
     protected $DBGroup              = 'default';
     protected $table                = 'marcas';
-    protected $primaryKey           = 'id';
+    protected $primaryKey           = 'idMarca';
     protected $useAutoIncrement     = true;
     protected $insertID             = 0;
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = [];
+    protected $allowedFields        = ['Nombre', 'Descripcion'];
 
     // Dates
     protected $useTimestamps        = false;

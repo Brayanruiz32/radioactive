@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-
+use App\Models\ProductosModel;
 class Productos extends ResourceController
 {
     /**
@@ -13,9 +13,11 @@ class Productos extends ResourceController
      */
     public function index()
     {
+        $model = new ProductosModel();
+        $productos['productos'] = $model->asObject()->findAll();
         $session = session();
         $session->get();
-        return view('contenido/productos'); 
+        return view('contenido/productos', $productos); 
     }
 
     /**

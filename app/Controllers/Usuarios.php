@@ -8,8 +8,18 @@ class Usuarios extends BaseController
 {
     public function index()
     {
+        $model = new UsuariosModel();
+        $db = \Config\Database::connect();
+        $builder = $db->table('usuarios');
+        $builder->select('*');
+        $builder->join('perfiles', 'usuarios.IdPerfil = perfiles.IdPerfil', 'inner');  
+        $builder->where('usuarios.estado', 1);  
+        $resultado = $builder->get();
+        /*
         $model = new UsuariosModel(); 
         $usuarios['usuarios'] = $model->asObject()->paginate(5); 
+        */
+        $usuarios['usuarios'] = $resultado->getResult('object');
         $usuarios['paginador'] = $model->pager; 
         $session = session(); 
         $session->get(); 
@@ -56,5 +66,13 @@ class Usuarios extends BaseController
         return view('contenido/registrarse'); 
     }
 
+    public function eliminar($id){
+        $model = new UsuariosModel(); 
+       $datos = [
+           'Estado' => 0
+       ];
+        $model->update($id, $datos); 
+        return redirect()->to(base_url('/usuarios'));
+    }
 
 }
